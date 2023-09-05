@@ -10,7 +10,7 @@
 ##############################################
 set -x # debug mode
 set -e # Exit the script when there is an error
-set -O pipefail
+set -o pipefail
 
 df -h
 
