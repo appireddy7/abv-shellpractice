@@ -10,11 +10,13 @@
 ##############################################
 set -x # debug mode
 
-echo "Print the Disk Space"
+
 df -h
-echo "Print the Memory Info"
+
 free -g
-echo "Print the Cpu Info"
+
 nproc
+
+ps -ef | grep amazon | awk -F" " '{print $2}'
 
 
