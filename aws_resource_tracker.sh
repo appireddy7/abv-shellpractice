@@ -17,19 +17,19 @@ set -x
 # list s3 buckets
 
 echo "print list of s3 buckets"
-aws s3 ls > s3.log
+aws s3 ls
 
 # list EC2 instances
 
 echo "print list of EC2 instances"
-aws ec2 describe-instances > instances.log
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
 
 # list lambda functions
 
 echo "print list of lambda functions"
-aws lambda list-functions > lambdafunctions.log
+aws lambda list-functions
 
 # list IAM Users
 
 echo "Print list of IAM users"
-aws iam list-users > iam_users.log
+aws iam list-users
